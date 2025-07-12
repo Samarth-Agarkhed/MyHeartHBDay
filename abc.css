@@ -1,0 +1,179 @@
+ body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f264d1;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .envalop {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .back {
+            position: relative;
+            width: 250px;
+            height: 200px;
+            background: #6247aa;
+        }
+
+        .front {
+            position: absolute;
+            border-right: 130px solid #815ac0;
+            border-top: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            height: 0;
+            width: 0;
+            top: 0;
+            left: 120px;
+            z-index: 3;
+        }
+
+        .front:before {
+            content: "";
+            position: absolute;
+            border-left: 130px solid #815ac0;
+            border-top: 100px solid transparent;
+            border-bottom: 100px solid transparent;
+            height: 0;
+            width: 0;
+            top: -100px;
+            left: -120px;
+        }
+
+        .front:after {
+            content: "";
+            position: absolute;
+            border-bottom: 105px solid #7251b5;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            height: 0;
+            width: 0;
+            top: -5px;
+            left: -120px;
+        }
+
+        .top {
+            position: absolute;
+            border-top: 105px solid #9163cb;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            height: 0;
+            width: 0;
+            top: 0;
+            transform-origin: top;
+            transition: 0.4s;
+        }
+
+        .envalop:hover .top {
+            transform: rotateX(deg);
+        }
+
+        .letter {
+            position: absolute;
+            background: white;
+            width: 230px;
+            height: 200px;
+            top: 10px;
+            left: 10px;
+            padding: 15px;
+            box-sizing: border-box;
+            transition: 0.2s;
+            overflow: hidden;
+            opacity: 0;
+            
+
+        }
+
+        .envalop:hover .letter {
+            transform: translateY(-180px);
+            z-index: 5;
+            opacity: 1;
+        }
+
+        .text {
+            margin-top: 10px;
+            color: black;
+            text-align: justify;
+            font-size: 14px;
+        }
+
+        .text1 {
+            position: absolute;
+            color: white;
+            font-family: 'Pacifico', cursive;
+            top: 50px;
+            margin: auto;
+            height: 100px;
+            width: 200px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .b1 {
+            background-color: #f264d1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin-top: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: auto;
+            transition: background-color 0.3s;
+        }
+
+        .b1:hover {
+            background-color: #d84ab9;
+        }
+
+        .b1 a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .heart {
+            background-color: red;
+            height: 70px;
+            width: 70px;
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: rotate(-45deg);
+            box-shadow: -5px 10px 90px red;
+            animation: samarth 0.6s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes samarth {
+            0% {
+                transform: rotate(-45deg) scale(1.07);
+            }
+            70% {
+                transform: rotate(-45deg) scale(1.0);
+            }
+            100% {
+                transform: rotate(-45deg) scale(0.8);
+            }
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            background-color: red;
+            border-radius: 50px;
+        }
+
+        .heart:before {
+            top: -40px;
+        }
+
+        .heart:after {
+            right: -40px;
+        }
